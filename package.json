@@ -1,0 +1,10 @@
+{
+	"scripts": {
+		"dev": "vite"
+	},
+
+	"dependencies": {
+		"rrweb": "2.0.0-alpha.4",
+		"vite": "^4.4.8"
+	}
+}

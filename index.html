@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rrweb-live</title>
+</head>
+<link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb.min.css"
+/>
+<style type="text/css">
+    #replay-container {
+        width: 600px;
+        height: 500px;
+        border: 1px solid red
+    }
+    </style>
+<body>
+    <script type="module" src="./src/index.ts"></script>
+    <div>
+        <h1>rrweb-live</h1>
+        <input type="text" placeholder="请输入手机号码" />
+        <textarea name="" placeholder="请输入一个测试文案" ></textarea>
+
+
+        <div id="replay-container"></div>
+
+
+        <hr />
+
+        <iframe src="./iframe.html"></iframe>
+
+
+        <hr />
+
+        <button type="button" id="start">Start</button>
+        <button type="button" id="stop">Stop</button>
+
+        <br />
+
+        <button type="button" id="replay">replay</button>
+        <button type="button" id="startreplay">Start Replay</button>
+        <button type="button" id="stopreplay">Stop Replay</button>
+    </div>
+</body>
+</html>
