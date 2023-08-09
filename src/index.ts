@@ -8,6 +8,9 @@ const events = [];
 
 function init() {
     console.log("init rrweb ...");
+    if(localStorage.getItem("events")) {
+        localStorage.removeItem("events")
+    }
     stopFn = rrweb.record({
         emit(event) {
             console.log(event);
@@ -21,11 +24,15 @@ function stop() {
         stopFn();
         console.log("stop rrweb...");
         console.log("events: ", events);
+
+        localStorage.setItem("events", JSON.stringify(events))
+        document.getElementById("actions").style.display = 'block';
+        document.getElementById('replay-container').style.display = 'block';
+        document.getElementById("container").style.display = 'none';
     }
 }
 
 let replayer = null
-
 function initReplay() {
     replayer = new rrweb.Replayer(events, {
         root: document.getElementById("replay-container"),
@@ -35,7 +42,7 @@ function initReplay() {
 }
 
 function startReplay() {
-    replayer.start();
+    replayer.play();
 }
 
 function stopReplay() {
